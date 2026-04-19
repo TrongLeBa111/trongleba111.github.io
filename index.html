@@ -628,7 +628,7 @@ body {
     </a>
     <a class="sidebar-link" href="https://linkedin.com/in/trong-le-ba" target="_blank">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-      https://www.linkedin.com/in/tr%E1%BB%8Dng-l%C3%AA-b%C3%A1-169763395/
+      linkedin.com/in/trọng-lê-bá-169763395
     </a>
     <a class="sidebar-link" href="https://trongleba111.github.io" target="_blank">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -670,7 +670,7 @@ body {
       As a <strong>Data Engineer</strong>, I build the infrastructure that makes analysis possible — Medallion architecture, dbt transformations, Airflow orchestration, and automated quality testing. I close the loop by writing ML scores back to the warehouse.
     </div>
     <div class="track-intro" data-show="BA">
-      As a <strong>Business Analyst</strong>, I bridge technical data work with business requirements. I've documented full-cycle system requirements (DFD, ERD, Class Diagrams) and translated user needs into actionable platform designs.
+      As a <strong>Business Analyst</strong>, I deliver full-cycle systems analysis — from stakeholder mapping and requirements elicitation (survey design + V&V) through 7 types of UML/BPMN diagrams to digital transformation strategy. My BA work spans both technical system design (UNI-BRIDGE) and business strategy (VNPost digital roadmap).
     </div>
     <div class="track-intro" data-show="AI">
       As an <strong>AI/ML Engineer</strong>, I build end-to-end ML pipelines — feature engineering via dbt, LightGBM churn modeling (ROC-AUC 0.738), SHAP explainability, imbalanced classification handling, and NLP integration with Hugging Face models.
@@ -743,28 +743,24 @@ body {
   <section class="section" id="projects">
     <div class="section-header">
       <span class="section-title">Projects</span>
-      <span class="section-count">3 projects</span>
+      <span class="section-count">5 projects</span>
     </div>
 
-    <!-- Project 1 -->
+    <!-- Project 1 — E-commerce Pipeline -->
     <div class="project-item">
       <div class="project-header">
         <div class="project-name">E-commerce End-to-End Data Pipeline & Analytics</div>
         <div class="project-period">Oct 2025 – present</div>
       </div>
-
       <div class="project-desc">
         Built a complete data stack processing 650k+ records — from raw ingestion through a Medallion architecture (Raw → Staging → Marts) to RFM segmentation and ML-powered churn prediction, with automated score write-back into the warehouse.
       </div>
-
-      <!-- Track-specific angles -->
       <div class="project-angle" data-show="DA">DA lens: RFM segmentation on 99k+ customers — Champions, Loyal, At-Risk. Insight: 97% one-time buyer rate; delivery delays >14 days correlate with review drops (4.2 → 3.1).</div>
       <div class="project-angle" data-show="DE">DE lens: Medallion pipeline with 6 staging models, 4 mart tables, 16 dbt quality tests (100% pass). Daily 3-task Airflow DAG for zero-manual refresh.</div>
       <div class="project-angle" data-show="AI">AI lens: 13 features engineered via dbt → LightGBM (ROC-AUC 0.738) → SHAP explainability → automated write-back. Resolved data leakage and handled imbalanced classification.</div>
       <div class="project-angle" data-show="ECO">E-commerce lens: 650k+ orders, 99k+ customers analyzed. Uncovered that 97% bought only once and that delayed delivery (>14d) tanks review scores — business-critical finding.</div>
       <div class="project-angle" data-show="MKT">Marketing lens: RFM customer segmentation enables targeted retention campaigns per segment — Champions vs At-Risk treatment strategies.</div>
       <div class="project-angle" data-show="BA">BA lens: Defined analytical requirements, documented data dictionary, translated business questions into KPIs and segmentation logic.</div>
-
       <div class="project-tags">
         <span class="ptag highlight" data-tracks="DE,DA,AI">PostgreSQL</span>
         <span class="ptag highlight" data-tracks="DE">dbt Core</span>
@@ -776,7 +772,6 @@ body {
         <span class="ptag highlight" data-tracks="DA,ECO">RFM Segmentation</span>
         <span class="ptag highlight" data-tracks="AI,DA">Churn Prediction</span>
       </div>
-
       <div class="project-metrics">
         <div class="pm">Records: <strong>650k+</strong></div>
         <div class="pm">Customers: <strong>99k+</strong></div>
@@ -785,56 +780,147 @@ body {
       </div>
     </div>
 
-    <!-- Project 2 -->
+    <!-- Project 2 — UNI-BRIDGE (expanded) -->
     <div class="project-item">
       <div class="project-header">
-        <div class="project-name">UNI-BRIDGE Platform</div>
+        <div class="project-name">UNI-BRIDGE — Student–Enterprise Matching Platform</div>
         <div class="project-period">Dec 2025 – Mar 2026</div>
       </div>
       <div class="project-desc">
-        Led a team of 5 to design a student-enterprise matching platform. Delivered complete system documentation and a functional web demo demonstrating end-to-end workflows.
+        Full-cycle systems analysis and design for a platform connecting university students with enterprise project opportunities. Led a team of 5 through 11 weeks of structured BA work — from stakeholder interviews and requirements elicitation to complete UML documentation and a functional web demo.
       </div>
 
-      <div class="project-angle" data-show="BA">BA lens: Full-cycle requirements — DFD, ERD, Class Diagrams, use case modeling, stakeholder interviews, and functional specification.</div>
-      <div class="project-angle" data-show="ECO">E-commerce lens: Platform connecting supply (students) and demand (enterprises) — marketplace design thinking applied to talent matching.</div>
+      <div class="project-angle" data-show="BA">BA lens: Delivered the full SDLC analysis phase — problem identification, scope definition, stakeholder mapping, requirements elicitation plan (survey + interview methods with Validation & Verification), functional & non-functional requirements, and 7 diagram types across 2 deliverables (midterm + final report).</div>
+      <div class="project-angle" data-show="ECO">E-commerce lens: Marketplace design thinking — two-sided platform connecting supply (students) and demand (enterprises), with matching logic and workflow design for project application lifecycle.</div>
+      <div class="project-angle" data-show="DE">DE lens: Designed ERD and data flow architecture supporting the platform's core entities: Student, Enterprise, Project, Application, and Matching workflows.</div>
+
+      <div style="margin: 12px 0 14px; padding: 12px 14px; background: var(--bg2); border-radius: 6px; border-left: 2px solid var(--border);">
+        <div style="font-size: 10px; font-family: 'IBM Plex Mono', monospace; color: var(--faint); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px;">Deliverables produced</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px;">
+          <div style="font-size: 12px; color: var(--muted); display: flex; gap: 7px; align-items: baseline;"><span style="color: var(--track-color); font-family: monospace; font-size: 11px; transition: color 0.3s;">✓</span> BPMN 2.0 diagrams (2 processes)</div>
+          <div style="font-size: 12px; color: var(--muted); display: flex; gap: 7px; align-items: baseline;"><span style="color: var(--track-color); font-family: monospace; font-size: 11px; transition: color 0.3s;">✓</span> DFD — Context, Level 0, Level 1</div>
+          <div style="font-size: 12px; color: var(--muted); display: flex; gap: 7px; align-items: baseline;"><span style="color: var(--track-color); font-family: monospace; font-size: 11px; transition: color 0.3s;">✓</span> Use Case diagram + 5–6 detailed specs</div>
+          <div style="font-size: 12px; color: var(--muted); display: flex; gap: 7px; align-items: baseline;"><span style="color: var(--track-color); font-family: monospace; font-size: 11px; transition: color 0.3s;">✓</span> Sequence & Activity diagrams</div>
+          <div style="font-size: 12px; color: var(--muted); display: flex; gap: 7px; align-items: baseline;"><span style="color: var(--track-color); font-family: monospace; font-size: 11px; transition: color 0.3s;">✓</span> Class diagram (OOP structure)</div>
+          <div style="font-size: 12px; color: var(--muted); display: flex; gap: 7px; align-items: baseline;"><span style="color: var(--track-color); font-family: monospace; font-size: 11px; transition: color 0.3s;">✓</span> ERD (database schema)</div>
+          <div style="font-size: 12px; color: var(--muted); display: flex; gap: 7px; align-items: baseline;"><span style="color: var(--track-color); font-family: monospace; font-size: 11px; transition: color 0.3s;">✓</span> Functional & non-functional requirements</div>
+          <div style="font-size: 12px; color: var(--muted); display: flex; gap: 7px; align-items: baseline;"><span style="color: var(--track-color); font-family: monospace; font-size: 11px; transition: color 0.3s;">✓</span> Survey design + V&V methodology</div>
+        </div>
+      </div>
 
       <div class="project-tags">
-        <span class="ptag highlight" data-tracks="BA">Systems Analysis</span>
-        <span class="ptag highlight" data-tracks="BA">DFD / ERD</span>
-        <span class="ptag highlight" data-tracks="BA">Class Diagrams</span>
+        <span class="ptag highlight" data-tracks="BA">BPMN 2.0</span>
+        <span class="ptag highlight" data-tracks="BA">DFD (3 levels)</span>
+        <span class="ptag highlight" data-tracks="BA">Use Case</span>
+        <span class="ptag highlight" data-tracks="BA">Sequence Diagram</span>
+        <span class="ptag highlight" data-tracks="BA">Activity Diagram</span>
+        <span class="ptag highlight" data-tracks="BA">Class Diagram</span>
+        <span class="ptag highlight" data-tracks="BA,DE">ERD</span>
+        <span class="ptag highlight" data-tracks="BA">Requirements Elicitation</span>
+        <span class="ptag highlight" data-tracks="BA">Stakeholder Analysis</span>
+        <span class="ptag">Figma (UI prototype)</span>
         <span class="ptag">Web Demo</span>
-        <span class="ptag">Team Lead</span>
       </div>
       <div class="project-metrics">
         <div class="pm">Team: <strong>5 members</strong></div>
-        <div class="pm">Role: <strong>Team Leader</strong></div>
+        <div class="pm">Role: <strong>Team Leader + Systems Analyst</strong></div>
+        <div class="pm">Duration: <strong>11 weeks</strong></div>
+        <div class="pm">Diagrams: <strong>7 types</strong></div>
       </div>
     </div>
 
-    <!-- Project 3 -->
+    <!-- Project 3 — Applied ML (Midterm) -->
     <div class="project-item">
       <div class="project-header">
-        <div class="project-name">Predictive Modeling Project</div>
-        <div class="project-period">Aug – Nov 2025</div>
+        <div class="project-name">Applied ML: Loan Approval & Stock Forecasting</div>
+        <div class="project-period">Nov 2025 – Jan 2026</div>
       </div>
       <div class="project-desc">
-        Directed end-to-end ML model development with a focus on MLOps practices — experiment tracking, pipeline reproducibility, feature engineering — using Python.
+        Two end-to-end ML case studies from a Machine Learning midterm — loan approval classification on an imbalanced dataset (18k records) and time-series forecasting of MBB stock price using ensemble methods.
       </div>
-
-      <div class="project-angle" data-show="AI">AI lens: Applied MLOps principles: versioned experiments, reproducible pipelines, structured feature engineering flow.</div>
-      <div class="project-angle" data-show="DA">DA lens: Feature selection and model interpretation to extract business-relevant predictive signals.</div>
-
+      <div class="project-angle" data-show="AI">AI lens: XGBoost (F1 0.8544) vs Random Forest vs Logistic Regression. Imbalanced data handling (77/23 split), threshold tuning (precision–recall tradeoff at 0.3/0.5/0.7). Ensemble forecasting (HW+ARIMA+MLP, MAE 0.2748) outperformed all individual models.</div>
+      <div class="project-angle" data-show="DA">DA lens: EDA on 18k loan records — identified loan_percent_income (0.394 correlation) and prior defaults (0% approval rate) as dominant features. STL decomposition revealed weak weekly seasonality in MBB stock, guiding model selection toward ARIMA(1,1,1).</div>
+      <div class="project-angle" data-show="ECO">E-commerce lens: Consumer credit behavior modeling — income, loan purpose, and housing status as predictors. Applicable to fintech credit scoring in e-commerce checkout financing.</div>
       <div class="project-tags">
-        <span class="ptag highlight" data-tracks="AI">Python</span>
+        <span class="ptag highlight" data-tracks="AI,DA">Python</span>
+        <span class="ptag highlight" data-tracks="AI">XGBoost</span>
         <span class="ptag highlight" data-tracks="AI">scikit-learn</span>
-        <span class="ptag highlight" data-tracks="AI">MLOps</span>
-        <span class="ptag highlight" data-tracks="AI,DA">Feature Engineering</span>
+        <span class="ptag highlight" data-tracks="AI,DA">Imbalanced Classification</span>
+        <span class="ptag highlight" data-tracks="AI,DA">ARIMA</span>
+        <span class="ptag highlight" data-tracks="AI,DA">Holt-Winters</span>
+        <span class="ptag highlight" data-tracks="AI">MLP Neural Network</span>
+        <span class="ptag highlight" data-tracks="AI,DA">Ensemble Forecasting</span>
+        <span class="ptag highlight" data-tracks="DA">STL Decomposition</span>
+        <span class="ptag highlight" data-tracks="DA">Threshold Tuning</span>
       </div>
       <div class="project-metrics">
-        <div class="pm">Context: <strong>ML Course</strong></div>
-        <div class="pm">Role: <strong>Team Lead / ML Engineer</strong></div>
+        <div class="pm">Best classifier: <strong>XGBoost F1 = 0.8544</strong></div>
+        <div class="pm">Best forecast: <strong>Ensemble MAE = 0.2748</strong></div>
+        <div class="pm">Dataset: <strong>18k records</strong></div>
       </div>
     </div>
+
+    <!-- Project 4 — VNPost Digital Transformation -->
+    <div class="project-item">
+      <div class="project-header">
+        <div class="project-name">VNPost Digital Transformation Strategy</div>
+        <div class="project-period">Jan – Mar 2026</div>
+      </div>
+      <div class="project-desc">
+        Analyzed VNPost's digital transformation challenges in the context of Vietnam's 25%+ e-commerce growth (2024). Proposed a phased improvement roadmap for the VNPost Plus app, benchmarked against Viettel Post (4.4★ rating), using NLP sentiment analysis of CH Play reviews.
+      </div>
+      <div class="project-angle" data-show="BA">BA lens: Applied CCDC value framework, Shared Vision Map, P/O matrix, Two-Pizza Team model, and KPI roadmap per transformation phase. Full risk assessment matrix with mitigation strategies.</div>
+      <div class="project-angle" data-show="MKT">Marketing lens: Scraped and analyzed user reviews from CH Play to identify core pain points (UI/UX, last-mile delivery, tracking). Benchmarked brand positioning vs Viettel Post and tech-native competitors (GHTK, Shopee Express).</div>
+      <div class="project-angle" data-show="ECO">E-commerce lens: Analyzed last-mile delivery operations for 13,000+ service points. Identified logistics tech gaps (real-time tracking, API integration with e-commerce platforms) blocking growth in the e-commerce delivery market.</div>
+      <div class="project-tags">
+        <span class="ptag highlight" data-tracks="BA">Digital Strategy</span>
+        <span class="ptag highlight" data-tracks="BA">KPI Framework</span>
+        <span class="ptag highlight" data-tracks="BA">Risk Assessment</span>
+        <span class="ptag highlight" data-tracks="BA">Shared Vision Map</span>
+        <span class="ptag highlight" data-tracks="MKT">Sentiment Analysis (NLP)</span>
+        <span class="ptag highlight" data-tracks="MKT,ECO">Competitive Analysis</span>
+        <span class="ptag highlight" data-tracks="ECO">Logistics / Last-mile</span>
+        <span class="ptag highlight" data-tracks="BA">Stakeholder Mapping</span>
+      </div>
+      <div class="project-metrics">
+        <div class="pm">Context: <strong>Digital Business Transformation course</strong></div>
+        <div class="pm">Scope: <strong>13,000+ service points</strong></div>
+        <div class="pm">Framework: <strong>David Rogers 5-step</strong></div>
+      </div>
+    </div>
+
+    <!-- Project 5 — Predictive Modeling / IDSS -->
+    <div class="project-item">
+      <div class="project-header">
+        <div class="project-name">IDSS — Intelligent Decision Support System <span style="font-size:11px; font-weight:400; color:var(--faint); font-family:'IBM Plex Mono',monospace;">(In Development)</span></div>
+        <div class="project-period">Apr 2026 – present</div>
+      </div>
+      <div class="project-desc">
+        Building a multi-platform AI system that combines Time-Series RAG (TS-RAG) with LLM reasoning to help retail and logistics managers make data-backed decisions — with Explainable AI output and compliance with Vietnam AI Law 2025.
+      </div>
+      <div class="project-angle" data-show="AI">AI lens: TS-RAG architecture — FAISS vector DB for time-series pattern retrieval + LLM reasoning layer (LangChain/LLaMA Index). Multi-agent system: Supervisor, Forecast Agent, Anomaly Detection Agent. Explainability built-in for AI Law 2025 compliance.</div>
+      <div class="project-angle" data-show="DE">DE lens: Multi-container Docker setup, FastAPI backend, PostgreSQL + FAISS hybrid storage. Automated activity logging pipeline for compliance and audit trails.</div>
+      <div class="project-angle" data-show="ECO">E-commerce lens: Targets retail and logistics use cases — sales forecasting, inventory anomaly detection, and demand-driven decision support delivered via Slack bot and Streamlit dashboard.</div>
+      <div class="project-angle" data-show="BA">BA lens: System designed around business decision workflows — natural language output, explainable recommendations, and role-based access for managers vs analysts.</div>
+      <div class="project-tags">
+        <span class="ptag highlight" data-tracks="AI">TS-RAG</span>
+        <span class="ptag highlight" data-tracks="AI,DE">FAISS</span>
+        <span class="ptag highlight" data-tracks="AI">LangChain</span>
+        <span class="ptag highlight" data-tracks="AI">LLM Reasoning</span>
+        <span class="ptag highlight" data-tracks="AI">Multi-Agent System</span>
+        <span class="ptag highlight" data-tracks="DE">Docker</span>
+        <span class="ptag highlight" data-tracks="DE">FastAPI</span>
+        <span class="ptag highlight" data-tracks="MKT,ECO">Slack Bot</span>
+        <span class="ptag highlight" data-tracks="DA,ECO">Streamlit Dashboard</span>
+        <span class="ptag highlight" data-tracks="AI,BA">Explainable AI</span>
+      </div>
+      <div class="project-metrics">
+        <div class="pm">Status: <strong>Active development</strong></div>
+        <div class="pm">Stack: <strong>TS-RAG + LLM + Multi-agent</strong></div>
+        <div class="pm">Compliance: <strong>Vietnam AI Law 2025</strong></div>
+      </div>
+    </div>
+
   </section>
 
   <!-- SKILLS -->
@@ -880,10 +966,18 @@ body {
       <div class="skill-row" data-relevant="BA">
         <div class="skill-cat">Business Analysis</div>
         <div class="skill-items">
-          <span class="ptag highlight" data-tracks="BA">Requirements Gathering</span>
-          <span class="ptag highlight" data-tracks="BA">DFD / ERD</span>
-          <span class="ptag highlight" data-tracks="BA">UML / Class Diagrams</span>
-          <span class="ptag highlight" data-tracks="BA">Systems Design</span>
+          <span class="ptag highlight" data-tracks="BA">Requirements Elicitation</span>
+          <span class="ptag highlight" data-tracks="BA">Stakeholder Analysis</span>
+          <span class="ptag highlight" data-tracks="BA">BPMN 2.0</span>
+          <span class="ptag highlight" data-tracks="BA">DFD (Context / L0 / L1)</span>
+          <span class="ptag highlight" data-tracks="BA">Use Case Diagram</span>
+          <span class="ptag highlight" data-tracks="BA">Sequence Diagram</span>
+          <span class="ptag highlight" data-tracks="BA">Activity Diagram</span>
+          <span class="ptag highlight" data-tracks="BA">Class Diagram</span>
+          <span class="ptag highlight" data-tracks="BA,DE">ERD</span>
+          <span class="ptag highlight" data-tracks="BA">Functional & Non-functional Req.</span>
+          <span class="ptag highlight" data-tracks="BA">Digital Strategy (CCDC, KPI)</span>
+          <span class="ptag highlight" data-tracks="BA">Figma (UI Prototyping)</span>
         </div>
       </div>
       <div class="skill-row" data-relevant="DA,DE,ECO">
@@ -891,11 +985,17 @@ body {
         <div class="skill-items">
           <span class="ptag highlight" data-tracks="DA,ECO">RFM Segmentation</span>
           <span class="ptag highlight" data-tracks="AI,DA">Churn Prediction</span>
+          <span class="ptag highlight" data-tracks="AI,DA">Imbalanced Classification</span>
+          <span class="ptag highlight" data-tracks="AI,DA">Ensemble Forecasting</span>
+          <span class="ptag highlight" data-tracks="AI,DA">ARIMA / Holt-Winters</span>
+          <span class="ptag highlight" data-tracks="AI,DA">Threshold Tuning</span>
           <span class="ptag highlight" data-tracks="DE">ETL / ELT</span>
           <span class="ptag highlight" data-tracks="DE">Medallion Architecture</span>
           <span class="ptag highlight" data-tracks="DE,DA">Star Schema</span>
           <span class="ptag highlight" data-tracks="AI">Feature Engineering</span>
           <span class="ptag highlight" data-tracks="AI">MLOps</span>
+          <span class="ptag highlight" data-tracks="AI">TS-RAG / Vector Search</span>
+          <span class="ptag highlight" data-tracks="AI,BA">Explainable AI (SHAP)</span>
           <span class="ptag highlight" data-tracks="MKT">Sentiment Analysis</span>
         </div>
       </div>
@@ -912,7 +1012,7 @@ body {
       <div>
         <div class="edu-degree">Bachelor of Business Information Management</div>
         <div class="edu-school">University of Economics and Law – VNU-HCM · Digital Business & AI</div>
-        <div class="edu-detail">GPA: 8.2 / 10 &nbsp;·&nbsp; Coursework: Data Warehouse · Database Management · Machine Learning · Data & Visual Analytics</div>
+        <div class="edu-detail">GPA: 8.2 / 10 &nbsp;·&nbsp; Coursework: Systems Analysis & Design · Data Warehouse · Database Management · Machine Learning · Data & Visual Analytics · Digital Business Transformation</div>
       </div>
     </div>
   </section>
