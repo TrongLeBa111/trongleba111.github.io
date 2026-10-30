@@ -1,0 +1,199 @@
+/* ════════════════════════════════════════════════════════════
+   fx.css — animation & personal-brand layer for the portfolio
+   Loaded AFTER the inline <style> in index.html, so it can override it.
+   Everything that hides content is gated behind  html.fx
+   (set only when JS runs and the visitor has NOT asked for reduced motion).
+   ════════════════════════════════════════════════════════════ */
+
+/* ── 1. Smooth track-color morph ─────────────────────────────
+   Registering the colors lets the browser interpolate them, so the whole
+   page "melts" from one track color to the next instead of snapping. */
+@property --tc { syntax: '<color>'; inherits: true; initial-value: #38BDF8; }
+@property --tb { syntax: '<color>'; inherits: true; initial-value: rgba(56, 189, 248, 0.12); }
+@property --fx-ang { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+
+body { transition: --tc 0.6s ease, --tb 0.6s ease; }
+
+/* ── 2. Boot screen (first visit of a session) ───────────── */
+#fxBoot {
+  position: fixed; inset: 0; z-index: 3000;
+  display: none; align-items: center; justify-content: center;
+  background: var(--bg);
+  transition: opacity 0.45s ease, visibility 0.45s;
+  cursor: pointer;
+}
+.fx-boot #fxBoot { display: flex; }
+#fxBoot.out { opacity: 0; visibility: hidden; }
+
+.fx-boot-box {
+  width: min(560px, 88vw);
+  font-family: 'Space Mono', monospace; font-size: 13px; color: var(--muted);
+}
+.fx-boot-line {
+  opacity: 0; transform: translateY(4px);
+  margin: 5px 0; white-space: pre-wrap;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.fx-boot-line.on { opacity: 1; transform: none; }
+.fx-boot-line b { color: var(--accent); font-weight: 700; }
+.fx-boot-line.last { color: var(--text-bright); }
+.fx-boot-bar { height: 2px; margin-top: 18px; background: var(--border); overflow: hidden; border-radius: 2px; }
+.fx-boot-bar i { display: block; height: 100%; width: 0; background: var(--accent); transition: width 1.6s linear; }
+.fx-boot-skip { margin-top: 14px; font-size: 11px; letter-spacing: 0.1em; color: var(--faint); }
+
+/* hold the hero entrance until the boot screen is gone */
+.fx-boot .hero-content > * { animation-play-state: paused; }
+
+/* ── 3. Scroll progress + ambient background ─────────────── */
+#fxProgress {
+  position: fixed; top: 0; left: 0; z-index: 1100;
+  width: 100%; height: 3px;
+  transform-origin: 0 50%; transform: scaleX(0);
+  background: linear-gradient(90deg, var(--tc), transparent 130%);
+  pointer-events: none;
+}
+#fxBg {
+  position: fixed; inset: 0; z-index: -1;
+  pointer-events: none; opacity: 0.55;
+}
+
+/* ── 4. Section dividers: line grows, label types itself ─── */
+.fx .section-divider .divider-line {
+  transform: scaleX(0); transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.fx .section-divider .divider-line:first-child { transform-origin: 100% 50%; }
+.fx .section-divider .divider-line:last-child { transform-origin: 0 50%; }
+.fx .section-divider.fx-in .divider-line { transform: scaleX(1); }
+.fx .section-divider:not(.fx-in) .divider-text { opacity: 0; }
+.fx .divider-text.typing::after {
+  content: '▌'; margin-left: 2px; color: var(--tc);
+  animation: fx-blink 0.7s steps(1) infinite;
+}
+@keyframes fx-blink { 50% { opacity: 0; } }
+
+/* ── 5. Staggered entrance for grids of cards/chips ──────── */
+.fx .stg {
+  opacity: 0; transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(var(--i, 0) * 70ms);
+}
+.fx .stg.in { opacity: 1; transform: none; }
+/* (JS removes .stg once the entrance is done, so normal hover styles take over) */
+
+/* ── 6. Hero avatar: tilt + rotating ring ────────────────── */
+.fx .hero-avatar-wrap {
+  transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+.fx .hero-avatar-wrap::before {
+  content: ''; position: absolute; inset: -12px; border-radius: 50%;
+  background: conic-gradient(from var(--fx-ang), var(--tc), transparent 35%, transparent 65%, var(--tc));
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
+          mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
+  animation: fx-spin 9s linear infinite;
+  opacity: 0.85; pointer-events: none;
+}
+@keyframes fx-spin { to { --fx-ang: 360deg; } }
+
+/* ── 7. Cursor spotlight on cards ────────────────────────── */
+.project-card::after,
+.impact-card::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), var(--tb), transparent 60%);
+  opacity: 0; transition: opacity 0.3s ease;
+}
+.project-card:hover::after,
+.impact-card:hover::after { opacity: 1; }
+
+/* ── 8. "Mission results" (impact) section ───────────────── */
+.impact-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 36px;
+}
+.impact-card {
+  position: relative; overflow: hidden;
+  background: rgba(17, 34, 64, 0.5);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 26px 24px; box-shadow: var(--shadow);
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.impact-card:hover { transform: translateY(-4px); border-color: var(--border2); }
+.impact-card.is-lit { border-color: var(--tc); box-shadow: 0 0 28px var(--tb), var(--shadow); }
+.impact-num {
+  font-size: clamp(40px, 5vw, 56px); font-weight: 800;
+  letter-spacing: -0.04em; line-height: 1; color: var(--tc);
+}
+.impact-lbl {
+  font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--text-bright); margin: 12px 0 8px;
+}
+.impact-txt { font-size: 14px; line-height: 1.55; color: var(--muted); }
+.impact-src {
+  margin-top: 12px; font-family: 'Space Mono', monospace; font-size: 10px;
+  letter-spacing: 0.08em; color: var(--faint);
+}
+
+.now-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+.now-card {
+  border: 1px dashed var(--border2); border-radius: var(--radius);
+  padding: 18px 20px; background: rgba(14, 22, 38, 0.5);
+}
+.now-k {
+  display: flex; align-items: center; gap: 8px;
+  font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--tc);
+}
+.now-k::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--tc);
+  animation: fx-blink 1.6s ease-in-out infinite;
+}
+.now-v { margin-top: 8px; font-size: 14px; line-height: 1.5; color: var(--text); }
+
+@media (max-width: 900px) { .impact-grid { grid-template-columns: repeat(2, 1fr); } .now-row { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .impact-grid { grid-template-columns: 1fr; } }
+
+/* ── 9. Floating "open for hire" pill + toast ────────────── */
+#fxHire {
+  position: fixed; right: 20px; bottom: 20px; z-index: 900;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 11px 18px; border-radius: 100px;
+  font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+  color: var(--bg); background: var(--tc); text-decoration: none;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5), 0 0 22px var(--tb);
+  opacity: 0; transform: translateY(16px); pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+#fxHire.show { opacity: 1; transform: none; pointer-events: auto; }
+#fxHire:hover { filter: brightness(1.1); }
+#fxHire i { width: 8px; height: 8px; border-radius: 50%; background: var(--bg); animation: fx-blink 1.4s ease-in-out infinite; }
+
+#fxToast {
+  position: fixed; left: 50%; bottom: 28px; z-index: 3100;
+  transform: translate(-50%, 20px); opacity: 0; pointer-events: none;
+  padding: 10px 16px; border-radius: 8px;
+  background: var(--surface2); border: 1px solid var(--border2); color: var(--text-bright);
+  font-family: 'Space Mono', monospace; font-size: 12px;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+#fxToast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* ── 10. Copy-email button ───────────────────────────────── */
+.fx-mail-wrap { position: relative; }
+.fx-copy {
+  position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+  font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.1em;
+  padding: 5px 10px; border-radius: 6px; cursor: pointer;
+  background: var(--bg2); color: var(--muted); border: 1px solid var(--border2);
+  transition: all 0.2s;
+}
+.fx-copy:hover { color: var(--tc); border-color: var(--tc); }
+
+/* "prepared for" chip in the hero tag */
+.fx-for { color: var(--text-bright); }
+
+/* ── 11. Respect reduced motion ──────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  #fxBoot, #fxBg { display: none !important; }
+  .fx-boot-bar i, .fx-boot-line { transition: none !important; }
+  .fx .hero-avatar-wrap::before { animation: none !important; }
+}
