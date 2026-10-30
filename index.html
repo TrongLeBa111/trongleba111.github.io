@@ -22,7 +22,7 @@
   </script>
   <link rel="canonical" href="https://trongleba111.github.io/">
   <meta name="author" content="Lê Bá Trọng">
-  <meta name="theme-color" content="#070B14">
+  <meta name="theme-color" content="#F7FAFF">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070B14'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' text-anchor='middle' fill='%2322C55E'%3ELT%3C/text%3E%3C/svg%3E">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://trongleba111.github.io/">
@@ -127,6 +127,23 @@
     .also-open { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 16px; font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted); }
     .also-open b { font-weight: 600; padding: 4px 10px; border-radius: 999px; color: var(--c); background: color-mix(in srgb, var(--c) 14%, transparent); border: 1px solid color-mix(in srgb, var(--c) 45%, transparent); }
 
+
+    /* ── LIGHT THEME ────────────────────────────────────────── */
+    :root {
+      --bg: #F7FAFF; --bg2: #EDF3FF; --surface: #FFFFFF; --surface2: #E6EEFF;
+      --border: #D5E0F5; --border2: #B4C6E8;
+      --text: #334155; --text-bright: #0F172A; --muted: #55657F; --faint: #7A8AA5;
+      --accent: #059669; --accent2: #047857; --accent-glow: rgba(5, 150, 105, 0.14);
+      --green: #10B981; --amber: #F59E0B;
+      --shadow: 0 4px 20px rgba(51, 90, 160, 0.12); --shadow-lg: 0 12px 40px rgba(51, 90, 160, 0.18);
+    }
+    [data-track="DA"], [data-track="ECO"] { --tc: #0284C7; --tb: rgba(14, 165, 233, 0.12); }
+    [data-track="DE"] { --tc: #9333EA; --tb: rgba(168, 85, 247, 0.12); }
+    [data-track="BA"] { --tc: #059669; --tb: rgba(16, 185, 129, 0.14); }
+    [data-track="AI"] { --tc: #E11D48; --tb: rgba(244, 63, 94, 0.12); }
+    [data-track="MKT"] { --tc: #D97706; --tb: rgba(245, 158, 11, 0.16); }
+    body { background: var(--bg); color: var(--text); }
+
     /* ── RESET ──────────────────────────────────────────────── */
     *,
     *::before,
@@ -165,7 +182,7 @@
     }
 
     .navbar.scrolled {
-      background: rgba(10, 25, 47, 0.92);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       border-bottom: 1px solid rgba(30, 58, 95, 0.5);
@@ -484,7 +501,7 @@
       padding: 14px 24px;
       border: 1.5px solid var(--border2);
       color: var(--text);
-      background: rgba(14, 22, 38, 0.6);
+      background: rgba(255, 255, 255, 0.6);
       border-radius: 8px;
       text-decoration: none;
       transition: all 0.25s;
@@ -531,7 +548,7 @@
       position: absolute;
       bottom: 8px;
       right: 0;
-      background: rgba(14, 22, 38, 0.95);
+      background: rgba(255, 255, 255, 0.95);
       border: 1px solid var(--border2);
       padding: 7px 14px;
       border-radius: 100px;
@@ -560,7 +577,7 @@
     .worked-with-section {
       margin: 16px 0 28px;
       padding: 20px 24px;
-      background: rgba(14, 22, 38, 0.55);
+      background: rgba(255, 255, 255, 0.55);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       backdrop-filter: blur(10px);
@@ -598,7 +615,7 @@
       align-items: center;
       gap: 8px;
       padding: 8px 16px;
-      background: rgba(16, 27, 48, 0.75);
+      background: rgba(255, 255, 255, 0.75);
       border: 1px solid var(--border2);
       border-radius: 8px;
       font-size: 12px;
@@ -674,7 +691,7 @@
       align-items: center;
       gap: 14px;
       padding: 16px 20px;
-      background: rgba(14, 22, 38, 0.6);
+      background: rgba(255, 255, 255, 0.6);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       border-left: 4px solid var(--green);
@@ -924,7 +941,7 @@
     }
 
     .about-skill-card {
-      background: rgba(17, 34, 64, 0.5);
+      background: rgba(226, 236, 252, 0.5);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 22px 20px;
@@ -933,7 +950,7 @@
 
     .about-skill-card:hover {
       border-color: var(--border2);
-      background: rgba(17, 34, 64, 0.8);
+      background: rgba(226, 236, 252, 0.8);
       transform: translateY(-2px);
     }
 
@@ -960,7 +977,7 @@
 
     /* ── EXPERIENCE ─────────────────────────────────────────── */
     .intern-card {
-      background: rgba(17, 34, 64, 0.6);
+      background: rgba(226, 236, 252, 0.6);
       border: 1px solid var(--border);
       border-top: 4px solid var(--tc);
       border-radius: var(--radius);
@@ -1053,7 +1070,7 @@
     }
 
     .project-card {
-      background: rgba(17, 34, 64, 0.5);
+      background: rgba(226, 236, 252, 0.5);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 32px;
@@ -1262,7 +1279,7 @@
       font-size: 10px;
       padding: 4px 10px;
       border-radius: 6px;
-      background: rgba(17, 34, 64, 0.5);
+      background: rgba(226, 236, 252, 0.5);
       color: var(--muted);
       border: 1px solid transparent;
       transition: all 0.2s;
@@ -1309,7 +1326,7 @@
       gap: 8px 20px;
       margin: 16px 0 18px;
       padding: 16px 20px;
-      background: rgba(17, 34, 64, 0.4);
+      background: rgba(226, 236, 252, 0.4);
       border-radius: 10px;
       border: 1px solid var(--border);
     }
@@ -1362,7 +1379,7 @@
 
     /* ── EDUCATION ──────────────────────────────────────────── */
     .edu-card {
-      background: rgba(17, 34, 64, 0.5);
+      background: rgba(226, 236, 252, 0.5);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 28px;
@@ -1422,7 +1439,7 @@
       color: var(--muted);
       text-decoration: none;
       padding: 14px 20px;
-      background: rgba(17, 34, 64, 0.4);
+      background: rgba(226, 236, 252, 0.4);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       transition: all 0.25s;
@@ -1431,7 +1448,7 @@
     .contact-link:hover {
       color: var(--accent);
       border-color: var(--border2);
-      background: rgba(17, 34, 64, 0.7);
+      background: rgba(226, 236, 252, 0.7);
       transform: translateX(6px);
     }
 
@@ -1446,7 +1463,7 @@
     }
 
     .cv-download-card {
-      background: rgba(17, 34, 64, 0.6);
+      background: rgba(226, 236, 252, 0.6);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 32px;
@@ -1607,7 +1624,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(10, 25, 47, 0.98);
+        background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(24px);
         flex-direction: column;
         padding: 32px 24px;
@@ -2079,7 +2096,7 @@
               query replicated data via standard SQL without touching the production database.</span></li>
           <li><span>Integrated <strong>PyDeequ</strong> checks into Spark processor across 4 tables (null PK,
               uniqueness, valid <code
-                style="font-family:Space Mono,monospace;font-size:11px;background:rgba(17,34,64,0.8);padding:1px 4px;border-radius:3px;color:var(--accent);">cdc_op</code>,
+                style="font-family:Space Mono,monospace;font-size:11px;background:rgba(226, 236, 252, 0.8);padding:1px 4px;border-radius:3px;color:var(--accent);">cdc_op</code>,
               non-empty); wired <strong>PagerDuty</strong> Events API v2 and <strong>Grafana</strong> webhook for
               tiered alerting.</span></li>
         </ul>
