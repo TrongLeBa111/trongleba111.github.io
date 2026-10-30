@@ -114,6 +114,19 @@
       --tb: rgba(56, 189, 248, 0.12);
     }
 
+
+    /* ── BRIGHT PALETTE ─────────────────────────────────────── */
+    :root { --accent: #2DD4A0; --accent2: #14B8A6; --accent-glow: rgba(45, 212, 160, 0.2); --green: #2DD4A0; --amber: #FBBF24; --text: #DCE6F5; --muted: #A9B8D0; }
+    [data-track="DA"], [data-track="ECO"] { --tc: #38D5FF; --tb: rgba(56, 213, 255, 0.16); }
+    [data-track="DE"] { --tc: #C084FC; --tb: rgba(192, 132, 252, 0.16); }
+    [data-track="BA"] { --tc: #34F5A5; --tb: rgba(52, 245, 165, 0.16); }
+    [data-track="AI"] { --tc: #FF5C8A; --tb: rgba(255, 92, 138, 0.16); }
+    [data-track="MKT"] { --tc: #FFD23F; --tb: rgba(255, 210, 63, 0.16); }
+    .cv-extra { border-color: color-mix(in srgb, var(--c) 55%, transparent); color: var(--c); }
+    .cv-extra:hover { border-color: var(--c); color: var(--c); background: color-mix(in srgb, var(--c) 16%, transparent); }
+    .also-open { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 16px; font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted); }
+    .also-open b { font-weight: 600; padding: 4px 10px; border-radius: 999px; color: var(--c); background: color-mix(in srgb, var(--c) 14%, transparent); border: 1px solid color-mix(in srgb, var(--c) 45%, transparent); }
+
     /* ── RESET ──────────────────────────────────────────────── */
     *,
     *::before,
@@ -1978,6 +1991,8 @@
             My work lives at the intersection of data engineering, analytics, and real business impact.
           </p>
 
+          <div class="also-open"><span>Also open to</span><b style="--c:#F97316">Automation &amp; Reporting</b><b style="--c:#EC4899">E-commerce</b><b style="--c:#14B8A6">Supply Chain (FMCG)</b><b style="--c:#8B5CF6">Software / Business Analysis</b></div>
+
           <div class="track-intro" data-show="DA">
             As a <strong>Data Analyst</strong>, I turn raw e-commerce data into decisions — RFM segmentation on 99k+
             customers, churn prediction (ROC-AUC 0.738), and correlation analysis linking delivery delays to review
@@ -2549,7 +2564,7 @@
 
         <div class="cv-download-card">
           <div class="cv-download-title">📄 Download CV</div>
-          <div class="cv-download-sub">Choose a track-specific version:</div>
+          <div class="cv-download-sub">Choose a role-specific version:</div>
           <div class="cv-buttons">
             <a class="cv-btn" href="image/CV/DA/LeBaTrong_CV_data_intern.pdf" target="_blank" download>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2580,6 +2595,26 @@
                 <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
               </svg>
               Marketing &amp; Growth
+            </a>
+            <a class="cv-btn cv-extra" style="--c:#F97316" href="image/CV/Automation &amp; Reporting Intern/Data_automation_intern_LeBaTrong.pdf" target="_blank" download>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" /></svg>
+              Automation &amp; Reporting
+            </a>
+            <a class="cv-btn cv-extra" style="--c:#EC4899" href="image/CV/E-commerce_intern/E-commerce_intern_LeBaTrong.pdf" target="_blank" download>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" /></svg>
+              E-commerce Intern
+            </a>
+            <a class="cv-btn cv-extra" style="--c:#EAB308" href="image/CV/Business &amp; E-commerce Project Intern/Business_Development_Intern_LeBaTrong.pdf" target="_blank" download>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" /></svg>
+              Business &amp; E-commerce Project
+            </a>
+            <a class="cv-btn cv-extra" style="--c:#14B8A6" href="image/CV/LeBaTrong_0825226120/LeBaTrong_0825226120.pdf" target="_blank" download>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" /></svg>
+              Supply Chain (FMCG)
+            </a>
+            <a class="cv-btn cv-extra" style="--c:#8B5CF6" href="image/CV/Business Analysis/Business_Analysis_Intern_LeBaTrong.pdf" target="_blank" download>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" /></svg>
+              Business Analysis (SE)
             </a>
           </div>
         </div>

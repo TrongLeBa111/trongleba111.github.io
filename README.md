@@ -43,7 +43,7 @@ Clicking a track pill also rewrites the address bar, so you can copy the link st
 | Hero | Rotating gradient ring, 3D tilt of the avatar, count-up numbers (650k+, 99k+, 0.738, 8.34). |
 | Cards | Cursor spotlight on project and impact cards. |
 | Mission Results | Six headline numbers with one-line proof, the 30-second version for recruiters. Cards light up for the active track. |
-| Contact | One-click **COPY** for the email (mail clients are often not configured), CV for every track, floating **OPEN FOR HIRE** pill after the hero. |
+| Contact | One-click **COPY** for the email (mail clients are often not configured), CV for every track plus extra role CVs (Automation & Reporting, E-commerce, Business & E-commerce Project, Supply Chain, Business Analysis), floating **OPEN FOR HIRE** pill after the hero. |
 | Link previews | Open Graph / Twitter card with `og-image.png` (1200×630), canonical URL, favicon and `schema.org/Person` JSON-LD so searches for "Lê Bá Trọng" show a clean card. |
 | Accessibility | `prefers-reduced-motion` turns every animation, the boot screen and the canvas off and never hides content. Decorative layers are `aria-hidden`. |
 
